@@ -85,7 +85,8 @@ public class TimeManager : MonoBehaviour
         
         if(GeneralTime > 60 && Leave) // Go to End Sne and Destroi All the balls and player in the game
         {
-            
+            GameObject player = BallManager.instance.GetPlayer();
+            player.GetComponent<Player>().DeathAnimation();
             Leave = false;
             BallManager.instance.TurnOffGreen();
             TimeDestroi();
